@@ -2393,3 +2393,132 @@ INFO 2025-09-06 09:12:28,932 basehttp 14170 124679366882880 "GET /media/products
 INFO 2025-09-06 09:12:28,942 basehttp 14170 124679383668288 "GET /media/products/main/lululemon-reversible-yoga-mat.jpg HTTP/1.1" 304 0
 INFO 2025-09-06 09:12:28,950 basehttp 14170 124679366882880 "GET /media/products/main/sony-wh-1000xm4-wireless-headphones.jpg HTTP/1.1" 304 0
 INFO 2025-09-06 09:12:28,982 basehttp 14170 124679375275584 "GET /cart/count/ HTTP/1.1" 200 34
+INFO 2025-09-06 09:40:21,767 basehttp 14170 124679366882880 "GET /admin/auth/group/ HTTP/1.1" 302 0
+INFO 2025-09-06 09:40:21,786 basehttp 14170 124679366882880 "GET /admin/login/?next=/admin/auth/group/ HTTP/1.1" 200 4204
+INFO 2025-09-06 09:40:33,865 basehttp 14170 124679366882880 "GET / HTTP/1.1" 200 56193
+INFO 2025-09-06 09:40:33,879 basehttp 14170 124679366882880 "GET /media/products/main/dyson-v15-detect-cordless-vacuum.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,879 basehttp 14170 124679375275584 "GET /media/products/main/macbook-air-m2.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,970 basehttp 14170 124679366882880 "GET /media/products/main/levis-501-original-jeans.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,975 basehttp 14170 124679366882880 "GET /media/products/main/amazon-echo-dot-5th-gen.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,975 basehttp 14170 124679375275584 "GET /media/products/main/nike-air-zoom-pegasus-40.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,981 basehttp 14170 124679375275584 "GET /media/products/main/apple-watch-series-9.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,983 basehttp 14170 124679358490176 "GET /media/products/main/sony-wh-1000xm4-wireless-headphones.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:33,992 basehttp 14170 124679358490176 "GET /cart/count/ HTTP/1.1" 200 34
+INFO 2025-09-06 09:40:34,036 basehttp 14170 124679375275584 "GET /media/products/main/fiskars-garden-tool-set.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:40:34,085 basehttp 14170 124679375275584 "GET /media/products/main/lululemon-reversible-yoga-mat.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:41:45,998 basehttp 14170 124679375275584 "GET /product/amazon-echo-dot-5th-gen/ HTTP/1.1" 200 35535
+INFO 2025-09-06 09:41:46,170 basehttp 14170 124679375275584 "GET /cart/count/ HTTP/1.1" 200 34
+INFO 2025-09-06 09:41:53,667 basehttp 14170 124679375275584 "GET /products/?bestseller=true HTTP/1.1" 200 83855
+INFO 2025-09-06 09:41:53,744 basehttp 14170 124679375275584 "GET /media/products/main/python-programming-complete-guide.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:41:53,745 basehttp 14170 124679358490176 "GET /media/products/main/succulent-garden-starter-kit.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:41:53,750 basehttp 14170 124679358490176 "GET /media/products/main/patagonia-organic-cotton-t-shirt.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 09:41:53,791 basehttp 14170 124679375275584 "GET /cart/count/ HTTP/1.1" 200 34
+INFO 2025-09-07 10:41:55,209 views 95929 136473636742976 Search query 'Test' returned 1 products
+INFO 2025-09-07 10:41:55,258 views 95929 136473636742976 Category filter 'Electronics' applied
+INFO 2025-09-07 10:41:55,304 views 95929 136473636742976 Tag filter 'New Arrival' applied
+WARNING 2025-09-07 10:41:58,072 log 95929 136473636742976 Not Found: /product/non-existent/
+WARNING 2025-09-07 10:41:58,100 log 95929 136473636742976 Not Found: /category/non-existent/
+WARNING 2025-09-07 10:41:58,126 log 95929 136473636742976 Not Found: /tag/non-existent/
+ERROR 2025-09-07 10:41:58,399 log 95929 136473636742976 Internal Server Error: /product/test-product/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "/home/daniyal/devops-assign/store/views.py", line 276, in get_context_data
+    ProductReview.objects.filter(product=product, is_approved=True)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got [].
+INFO 2025-09-07 11:13:30,079 views 98189 131726444664640 Search query 'Test' returned 1 products
+INFO 2025-09-07 11:13:30,143 views 98189 131726444664640 Category filter 'Electronics' applied
+INFO 2025-09-07 11:13:30,207 views 98189 131726444664640 Tag filter 'New Arrival' applied
+WARNING 2025-09-07 11:13:34,127 log 98189 131726444664640 Not Found: /product/non-existent/
+WARNING 2025-09-07 11:13:34,160 log 98189 131726444664640 Not Found: /category/non-existent/
+WARNING 2025-09-07 11:13:34,194 log 98189 131726444664640 Not Found: /tag/non-existent/
+ERROR 2025-09-07 11:13:34,515 log 98189 131726444664640 Internal Server Error: /product/test-product/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "/home/daniyal/devops-assign/store/views.py", line 276, in get_context_data
+    ProductReview.objects.filter(product=product, is_approved=True)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got [].
+INFO 2025-09-07 11:14:30,972 auth_views 98431 128849479092032 New user registered: newuser
+INFO 2025-09-07 11:14:32,141 auth_views 98431 128849479092032 User logged in: newuser
+INFO 2025-09-07 11:14:32,258 views 98431 128849479092032 Category filter 'Electronics' applied
+INFO 2025-09-07 11:14:32,290 views 98431 128849479092032 Tag filter 'New Arrival' applied
+INFO 2025-09-07 11:14:32,320 views 98431 128849479092032 Search query 'Test' returned 1 products
+INFO 2025-09-07 11:14:35,863 views 98431 128849479092032 Search query 'Test' returned 1 products
+INFO 2025-09-07 11:14:35,904 views 98431 128849479092032 Search query 'Test' returned 1 products
+INFO 2025-09-07 11:14:35,907 views 98431 128849479092032 Category filter 'Electronics' applied
+INFO 2025-09-07 11:14:35,953 views 98431 128849479092032 Search query 'nonexistent' returned 0 products

@@ -5,31 +5,26 @@ This file contains the main URL patterns for the e-commerce application,
 including admin interface, store app, and monitoring endpoints.
 """
 
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import RedirectView
+from django.contrib import admin
 from django.http import HttpResponse
+from django.urls import include, path
+from django.views.generic import RedirectView
 
 urlpatterns = [
     # Admin interface
-    path('admin/', admin.site.urls),
-    
+    path("admin/", admin.site.urls),
     # Store application URLs
-    path('', include('store.urls')),
-    
+    path("", include("store.urls")),
     # Health check endpoint for monitoring (simple view)
-    path('health/', lambda request: HttpResponse('OK'), name='health_check'),
-    
+    path("health/", lambda request: HttpResponse("OK"), name="health_check"),
     # Prometheus metrics endpoint
-    path('', include('django_prometheus.urls')),
-    
+    path("", include("django_prometheus.urls")),
     # API endpoints
-    path('api/', include('store.api_urls')),
-    
+    path("api/", include("store.api_urls", namespace="api")),
     # Redirect root to store
-    path('', RedirectView.as_view(pattern_name='store:product_list'), name='home'),
+    path("", RedirectView.as_view(pattern_name="store:product_list"), name="home"),
 ]
 
 # Serve static and media files during development
