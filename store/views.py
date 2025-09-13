@@ -363,6 +363,7 @@ class CategoryDetailView(DetailView):
             products_page = paginator.page(paginator.num_pages)
 
         context["products"] = products_page
+        context["is_paginated"] = products_page.has_other_pages()
         context["subcategories"] = category.children.filter(is_active=True)
 
         # Add breadcrumb navigation
@@ -598,6 +599,78 @@ def search_suggestions(request):
     except Exception as e:
         logger.error(f"Error generating search suggestions: {e}")
         return JsonResponse({"suggestions": []})
+
+
+@login_required(login_url="/login/")
+def add_review(request, product_id):
+    """
+    Add a product review.
+
+    Args:
+        request: HTTP request object
+        product_id: ID of the product to review
+
+    Returns:
+        JsonResponse: Success/failure response
+    """
+    try:
+        product = get_object_or_404(Product, id=product_id, is_active=True)
+
+        if request.method == "POST":
+            from .forms import ProductReviewForm
+
+            form = ProductReviewForm(request.POST)
+            if form.is_valid():
+                # Check if user already reviewed this product
+                existing_review = ProductReview.objects.filter(
+                    user=request.user, product=product
+                ).first()
+
+                if existing_review:
+                    return JsonResponse(
+                        {
+                            "status": "error",
+                            "message": "You have already reviewed this product",
+                        },
+                        status=400,
+                    )
+
+                # Create new review
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                review.is_verified_purchase = (
+                    False  # Could be enhanced to check actual purchases
+                )
+                review.save()
+
+                return JsonResponse(
+                    {
+                        "status": "success",
+                        "message": "Thank you for your review! It has been submitted for approval.",
+                        "review_id": review.id,
+                    }
+                )
+            else:
+                return JsonResponse(
+                    {
+                        "status": "error",
+                        "message": "Please correct the errors below.",
+                        "errors": form.errors,
+                    },
+                    status=400,
+                )
+        else:
+            return JsonResponse(
+                {"status": "error", "message": "Invalid request method"}, status=405
+            )
+
+    except Exception as e:
+        logger.error(f"Error adding review for product {product_id}: {e}")
+        return JsonResponse(
+            {"status": "error", "message": "Failed to submit review"},
+            status=500,
+        )
 
 
 # Cache decorators for performance optimization
