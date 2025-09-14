@@ -183,6 +183,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "main_image_url",
             "is_featured",
             "is_bestseller",
+            "is_active",
             "view_count",
             "created_at",
             "updated_at",
@@ -205,7 +206,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def get_is_on_sale(self, obj):
         """Check if the product is currently on sale."""
-        return obj.is_on_sale()
+        return obj.is_on_sale
 
     def get_discount_percentage(self, obj):
         """Get the discount percentage if product is on sale."""

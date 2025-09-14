@@ -2881,3 +2881,1287 @@ INFO 2025-09-13 11:28:08,164 basehttp 60937 130142659671616 "GET /products/ HTTP
 INFO 2025-09-13 11:28:08,353 basehttp 60937 130142659671616 "GET /cart/count/ HTTP/1.1" 200 34
 INFO 2025-09-13 11:32:11,767 autoreload 60937 130142825359168 /home/daniyal/devops-assign/store/migrations/0003_alter_category_options_category_sort_order_and_more.py changed, reloading.
 INFO 2025-09-13 11:32:12,264 autoreload 65149 126090266990400 Watching for file changes with StatReloader
+ERROR 2025-09-13 11:49:41,126 log 70183 135242143954752 Internal Server Error: /product/test-product/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "/home/daniyal/devops-assign/store/views.py", line 276, in get_context_data
+    ProductReview.objects.filter(product=product, is_approved=True)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got [].
+INFO 2025-09-13 11:50:41,667 views 70527 132273072392000 Search query 'Test' returned 1 products
+INFO 2025-09-13 11:50:41,690 views 70527 132273072392000 Category filter 'Electronics' applied
+INFO 2025-09-13 11:50:41,713 views 70527 132273072392000 Tag filter 'New Arrival' applied
+WARNING 2025-09-13 11:50:43,224 log 70527 132273072392000 Not Found: /product/non-existent/
+WARNING 2025-09-13 11:50:43,238 log 70527 132273072392000 Not Found: /category/non-existent/
+WARNING 2025-09-13 11:50:43,250 log 70527 132273072392000 Not Found: /tag/non-existent/
+INFO 2025-09-13 11:50:58,152 autoreload 65149 126090266990400 /home/daniyal/devops-assign/store/models.py changed, reloading.
+INFO 2025-09-13 11:50:58,455 autoreload 70729 134899845248832 Watching for file changes with StatReloader
+INFO 2025-09-13 11:51:27,109 autoreload 70729 134899845248832 /home/daniyal/devops-assign/store/models.py changed, reloading.
+INFO 2025-09-13 11:51:27,714 autoreload 71168 139167183484736 Watching for file changes with StatReloader
+INFO 2025-09-13 12:09:42,340 autoreload 71168 139167183484736 /home/daniyal/devops-assign/store/models.py changed, reloading.
+INFO 2025-09-13 12:09:42,752 autoreload 74569 126712839087936 Watching for file changes with StatReloader
+INFO 2025-09-13 12:15:17,864 views 76802 126679544108864 Search query 'Test' returned 1 products
+INFO 2025-09-13 12:15:17,889 views 76802 126679544108864 Category filter 'Electronics' applied
+INFO 2025-09-13 12:15:17,916 views 76802 126679544108864 Tag filter 'New Arrival' applied
+WARNING 2025-09-13 12:15:19,588 log 76802 126679544108864 Not Found: /product/non-existent/
+WARNING 2025-09-13 12:15:19,602 log 76802 126679544108864 Not Found: /category/non-existent/
+WARNING 2025-09-13 12:15:19,616 log 76802 126679544108864 Not Found: /tag/non-existent/
+INFO 2025-09-13 12:15:54,536 views 77159 138982778689344 Search query 'Test' returned 1 products
+INFO 2025-09-13 12:15:54,559 views 77159 138982778689344 Category filter 'Electronics' applied
+INFO 2025-09-13 12:15:54,582 views 77159 138982778689344 Tag filter 'New Arrival' applied
+WARNING 2025-09-13 12:15:56,204 log 77159 138982778689344 Not Found: /product/non-existent/
+WARNING 2025-09-13 12:15:56,217 log 77159 138982778689344 Not Found: /category/non-existent/
+WARNING 2025-09-13 12:15:56,229 log 77159 138982778689344 Not Found: /tag/non-existent/
+INFO 2025-09-13 12:22:10,150 views 79677 136720414967616 Search query 'Test' returned 1 products
+INFO 2025-09-13 12:22:10,177 views 79677 136720414967616 Category filter 'Electronics' applied
+INFO 2025-09-13 12:22:10,205 views 79677 136720414967616 Tag filter 'New Arrival' applied
+WARNING 2025-09-13 12:22:12,146 log 79677 136720414967616 Not Found: /product/non-existent/
+WARNING 2025-09-13 12:22:12,164 log 79677 136720414967616 Not Found: /category/non-existent/
+WARNING 2025-09-13 12:22:12,181 log 79677 136720414967616 Not Found: /tag/non-existent/
+ERROR 2025-09-13 13:44:35,606 log 108389 131845133727552 Internal Server Error: /api/products/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/home/daniyal/devops-assign/store/serializers.py", line 208, in get_is_on_sale
+    return obj.is_on_sale()
+TypeError: 'bool' object is not callable
+ERROR 2025-09-13 13:45:07,799 log 108694 132963911079744 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 180, in retrieve
+    product = self.get_object()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view ProductDetailAPIView to be called with a URL keyword argument named "slug". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+WARNING 2025-09-13 13:45:07,967 log 108694 132963911079744 Bad Request: /api/products/
+ERROR 2025-09-13 13:46:07,797 log 109305 132127533819712 Internal Server Error: /api/categories/1/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view CategoryDetailAPIView to be called with a URL keyword argument named "slug". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+WARNING 2025-09-13 13:47:17,505 log 109861 133226460858176 Forbidden: /api/cart/
+WARNING 2025-09-13 13:47:18,038 log 109861 133226460858176 Method Not Allowed: /api/cart/remove/
+WARNING 2025-09-13 13:47:18,274 log 109861 133226460858176 Method Not Allowed: /api/cart/update/
+WARNING 2025-09-13 13:47:18,518 log 109861 133226460858176 Method Not Allowed: /api/cart/clear/
+WARNING 2025-09-13 13:47:19,012 log 109861 133226460858176 Not Found: /api/wishlist/add/
+WARNING 2025-09-13 13:47:19,235 log 109861 133226460858176 Method Not Allowed: /api/wishlist/remove/
+WARNING 2025-09-13 13:47:19,893 log 109861 133226460858176 Method Not Allowed: /api/orders/
+WARNING 2025-09-13 13:47:19,917 log 109861 133226460858176 Not Found: /api/products/99999/
+WARNING 2025-09-13 13:47:20,128 log 109861 133226460858176 Not Found: /api/cart/add/
+ERROR 2025-09-13 13:47:20,351 log 109861 133226460858176 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 857, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-13 13:47:20,878 log 109861 133226460858176 Method Not Allowed: /api/orders/
+WARNING 2025-09-13 13:47:20,900 log 109861 133226460858176 Forbidden: /api/cart/
+ERROR 2025-09-13 13:47:21,199 log 109861 133226460858176 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 787, in get
+    "image": item.product.image.url if item.product.image else None,
+AttributeError: 'Product' object has no attribute 'image'
+WARNING 2025-09-13 13:48:09,219 log 110262 136738708780864 Not Found: /api/cart/remove/
+WARNING 2025-09-13 13:49:01,766 log 110702 135672656258880 Forbidden: /api/cart/
+WARNING 2025-09-13 13:49:02,475 log 110702 135672656258880 Method Not Allowed: /api/cart/clear/
+WARNING 2025-09-13 13:50:12,005 log 111450 134596756563776 Forbidden: /api/cart/
+WARNING 2025-09-13 13:50:29,728 log 111822 137946380629824 Forbidden: /api/cart/
+WARNING 2025-09-13 13:50:30,897 log 111822 137946380629824 Not Found: /api/wishlist/add/
+WARNING 2025-09-13 13:50:31,162 log 111822 137946380629824 Method Not Allowed: /api/wishlist/remove/
+WARNING 2025-09-13 13:50:31,980 log 111822 137946380629824 Method Not Allowed: /api/orders/
+WARNING 2025-09-13 13:50:31,998 log 111822 137946380629824 Not Found: /api/products/99999/
+WARNING 2025-09-13 13:50:32,348 log 111822 137946380629824 Not Found: /api/cart/add/
+ERROR 2025-09-13 13:50:32,731 log 111822 137946380629824 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 857, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-13 13:50:33,100 log 111822 137946380629824 Method Not Allowed: /api/orders/
+WARNING 2025-09-13 13:50:33,122 log 111822 137946380629824 Forbidden: /api/cart/
+ERROR 2025-09-13 13:50:33,552 log 111822 137946380629824 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 787, in get
+    "image": item.product.image.url if item.product.image else None,
+AttributeError: 'Product' object has no attribute 'image'
+ERROR 2025-09-13 14:31:42,921 log 121633 134790887569216 Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.subtotal
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 1200, in create
+    order = Order.objects.create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.subtotal
+ERROR 2025-09-13 14:33:36,358 log 122007 129555960809280 Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.total_amount
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 1203, in create
+    order = Order.objects.create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.total_amount
+ERROR 2025-09-13 14:33:48,145 log 122129 133128543885120 Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 1232, in create
+    order.calculate_totals()
+AttributeError: 'Order' object has no attribute 'calculate_totals'
+WARNING 2025-09-13 14:34:16,415 log 122435 131536032532288 Forbidden: /api/cart/
+WARNING 2025-09-13 14:34:19,092 log 122435 131536032532288 Not Found: /api/products/99999/
+WARNING 2025-09-13 14:34:19,434 log 122435 131536032532288 Not Found: /api/cart/add/
+ERROR 2025-09-13 14:34:19,850 log 122435 131536032532288 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 882, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-13 14:34:20,091 log 122435 131536032532288 Forbidden: /api/cart/
+ERROR 2025-09-13 14:34:20,424 log 122435 131536032532288 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 812, in get
+    "image": item.product.image.url if item.product.image else None,
+AttributeError: 'Product' object has no attribute 'image'
+WARNING 2025-09-13 14:35:34,794 log 122997 124495782098752 Forbidden: /api/cart/
+WARNING 2025-09-13 14:35:37,041 log 122997 124495782098752 Not Found: /api/products/99999/
+WARNING 2025-09-13 14:35:37,209 log 122997 124495782098752 Not Found: /api/cart/add/
+ERROR 2025-09-13 14:35:37,418 log 122997 124495782098752 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 887, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-13 14:35:37,611 log 122997 124495782098752 Forbidden: /api/cart/
+WARNING 2025-09-14 07:39:44,736 log 128117 133847240140608 Not Found: /api/wishlist/add/
+ERROR 2025-09-14 07:42:41,886 log 128997 132118322472768 Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.subtotal
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 1214, in create
+    order = Order.objects.create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.subtotal
+ERROR 2025-09-14 07:42:54,417 log 129054 129544178194240 Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 1243, in create
+    order.calculate_totals()
+AttributeError: 'Order' object has no attribute 'calculate_totals'
+WARNING 2025-09-14 07:43:21,572 log 129216 125077667493696 Forbidden: /api/cart/
+WARNING 2025-09-14 07:43:23,612 log 129216 125077667493696 Not Found: /api/products/99999/
+WARNING 2025-09-14 07:43:23,797 log 129216 125077667493696 Not Found: /api/cart/add/
+ERROR 2025-09-14 07:43:23,988 log 129216 125077667493696 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 884, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-14 07:43:24,218 log 129216 125077667493696 Forbidden: /api/cart/
+ERROR 2025-09-14 07:43:24,525 log 129216 125077667493696 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 814, in get
+    "image": item.product.image.url if item.product.image else None,
+AttributeError: 'Product' object has no attribute 'image'
+WARNING 2025-09-14 07:44:41,703 log 129696 138900612106048 Forbidden: /api/cart/
+WARNING 2025-09-14 07:44:43,735 log 129696 138900612106048 Not Found: /api/products/99999/
+WARNING 2025-09-14 07:44:43,948 log 129696 138900612106048 Not Found: /api/cart/add/
+ERROR 2025-09-14 07:44:44,130 log 129696 138900612106048 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 889, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-14 07:44:44,346 log 129696 138900612106048 Forbidden: /api/cart/
+WARNING 2025-09-14 08:35:09,616 log 141818 132536450762560 Forbidden: /api/cart/
+WARNING 2025-09-14 08:35:37,593 log 141938 125769785157440 Forbidden: /api/cart/
+WARNING 2025-09-14 08:35:44,139 log 141968 125090190436160 Forbidden: /api/cart/
+WARNING 2025-09-14 08:35:44,141 log 141968 125090190436160 Forbidden: /api/cart/add/
+WARNING 2025-09-14 08:35:44,143 log 141968 125090190436160 Forbidden: /api/wishlist/
+WARNING 2025-09-14 08:35:44,145 log 141968 125090190436160 Forbidden: /api/orders/
+WARNING 2025-09-14 08:35:56,044 log 142059 123650179512128 Not Found: /api/cart/add/
+WARNING 2025-09-14 08:36:12,721 log 142225 135908836955968 Bad Request: /api/cart/add/
+ERROR 2025-09-14 08:36:20,747 log 142261 136092423501632 Internal Server Error: /api/cart/add/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+store.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: CHECK constraint failed: quantity
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/daniyal/devops-assign/store/api_views.py", line 889, in post
+    cart_item, created = CartItem.objects.get_or_create(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: CHECK constraint failed: quantity
+WARNING 2025-09-14 08:36:34,218 log 142317 140446965675840 Bad Request: /api/cart/add/
+WARNING 2025-09-14 08:36:58,426 log 142427 137649651857216 Bad Request: /api/orders/
+WARNING 2025-09-14 08:37:05,658 log 142488 125351265257280 Not Found: /api/products/99999/
+WARNING 2025-09-14 08:37:06,187 log 142488 125351265257280 Bad Request: /api/cart/add/
+WARNING 2025-09-14 08:37:06,664 log 142488 125351265257280 Bad Request: /api/cart/add/
+WARNING 2025-09-14 08:37:07,112 log 142488 125351265257280 Bad Request: /api/orders/
+WARNING 2025-09-14 08:37:18,028 log 142682 129208138536768 Forbidden: /api/cart/
+WARNING 2025-09-14 08:37:22,122 log 142682 129208138536768 Not Found: /api/products/99999/
+WARNING 2025-09-14 08:37:22,480 log 142682 129208138536768 Bad Request: /api/cart/add/
+WARNING 2025-09-14 08:37:22,846 log 142682 129208138536768 Bad Request: /api/cart/add/
+WARNING 2025-09-14 08:37:23,212 log 142682 129208138536768 Bad Request: /api/orders/
+WARNING 2025-09-14 08:37:23,239 log 142682 129208138536768 Forbidden: /api/cart/
+WARNING 2025-09-14 08:37:23,241 log 142682 129208138536768 Forbidden: /api/cart/add/
+WARNING 2025-09-14 08:37:23,242 log 142682 129208138536768 Forbidden: /api/wishlist/
+WARNING 2025-09-14 08:37:23,244 log 142682 129208138536768 Forbidden: /api/orders/
+ERROR 2025-09-14 08:39:49,237 log 143689 131392477652800 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/test/utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/test/utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/daniyal/devops-assign/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'payment_method_create' not found. 'payment_method_create' is not a valid view function or pattern name.
+INFO 2025-09-14 09:08:34,661 checkout_views 150213 139445211678528 Order created: ORD-3B384F27 for user testuser
+INFO 2025-09-14 09:08:52,191 checkout_views 150262 129875695732544 Order created: ORD-56BC49AD for user testuser
+INFO 2025-09-14 09:09:04,396 checkout_views 150307 123659783722816 Order created: ORD-08A94CA2 for user testuser
+ERROR 2025-09-14 09:09:13,074 auth_views 150440 136126530942784 Error during user registration: UNIQUE constraint failed: store_userprofile.user_id
+INFO 2025-09-14 09:09:42,049 auth_views 150508 134809986135872 New user registered: newuser
+INFO 2025-09-14 09:09:42,545 auth_views 150508 134809986135872 User logged in: newuser
+INFO 2025-09-14 09:09:48,053 auth_views 150529 135839164340032 New user registered: newuser
+INFO 2025-09-14 09:09:48,538 auth_views 150529 135839164340032 User logged in: newuser
+INFO 2025-09-14 09:09:48,580 views 150529 135839164340032 Category filter 'Electronics' applied
+INFO 2025-09-14 09:09:48,589 views 150529 135839164340032 Tag filter 'New Arrival' applied
+INFO 2025-09-14 09:09:48,598 views 150529 135839164340032 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:09:49,292 checkout_views 150529 135839164340032 Order created: ORD-F9BC9E93 for user testuser
+WARNING 2025-09-14 09:09:49,730 base 150529 135839164340032 Method Not Allowed (POST): /profile/
+WARNING 2025-09-14 09:09:49,731 log 150529 135839164340032 Method Not Allowed: /profile/
+INFO 2025-09-14 09:09:49,963 views 150529 135839164340032 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:09:49,973 views 150529 135839164340032 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:09:49,973 views 150529 135839164340032 Category filter 'Electronics' applied
+INFO 2025-09-14 09:09:49,983 views 150529 135839164340032 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 09:09:50,170 log 150529 135839164340032 Bad Request: /cart/add/
+WARNING 2025-09-14 09:09:57,287 base 150566 132072805214016 Method Not Allowed (POST): /profile/
+WARNING 2025-09-14 09:09:57,287 log 150566 132072805214016 Method Not Allowed: /profile/
+INFO 2025-09-14 09:12:58,263 auth_views 151588 129409800533824 New user registered: newuser
+INFO 2025-09-14 09:12:58,825 auth_views 151588 129409800533824 User logged in: newuser
+INFO 2025-09-14 09:12:58,872 views 151588 129409800533824 Category filter 'Electronics' applied
+INFO 2025-09-14 09:12:58,881 views 151588 129409800533824 Tag filter 'New Arrival' applied
+INFO 2025-09-14 09:12:58,890 views 151588 129409800533824 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:12:59,753 checkout_views 151588 129409800533824 Order created: ORD-090AA154 for user testuser
+INFO 2025-09-14 09:13:00,544 views 151588 129409800533824 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:13:00,555 views 151588 129409800533824 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:13:00,556 views 151588 129409800533824 Category filter 'Electronics' applied
+INFO 2025-09-14 09:13:00,569 views 151588 129409800533824 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 09:13:00,865 log 151588 129409800533824 Bad Request: /cart/add/
+WARNING 2025-09-14 09:13:13,121 log 151749 134517729027904 Forbidden: /api/cart/
+WARNING 2025-09-14 09:13:15,227 log 151749 134517729027904 Not Found: /api/products/99999/
+WARNING 2025-09-14 09:13:15,411 log 151749 134517729027904 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:13:15,667 log 151749 134517729027904 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:13:15,889 log 151749 134517729027904 Bad Request: /api/orders/
+WARNING 2025-09-14 09:13:15,905 log 151749 134517729027904 Forbidden: /api/cart/
+WARNING 2025-09-14 09:13:15,906 log 151749 134517729027904 Forbidden: /api/cart/add/
+WARNING 2025-09-14 09:13:15,907 log 151749 134517729027904 Forbidden: /api/wishlist/
+WARNING 2025-09-14 09:13:15,909 log 151749 134517729027904 Forbidden: /api/orders/
+INFO 2025-09-14 09:13:16,538 auth_views 151749 134517729027904 New user registered: newuser
+INFO 2025-09-14 09:13:17,088 auth_views 151749 134517729027904 User logged in: newuser
+INFO 2025-09-14 09:13:17,129 views 151749 134517729027904 Category filter 'Electronics' applied
+INFO 2025-09-14 09:13:17,139 views 151749 134517729027904 Tag filter 'New Arrival' applied
+INFO 2025-09-14 09:13:17,148 views 151749 134517729027904 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:13:17,946 checkout_views 151749 134517729027904 Order created: ORD-66819B9E for user testuser
+INFO 2025-09-14 09:13:18,624 views 151749 134517729027904 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:13:18,635 views 151749 134517729027904 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:13:18,636 views 151749 134517729027904 Category filter 'Electronics' applied
+INFO 2025-09-14 09:13:18,652 views 151749 134517729027904 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 09:13:18,837 log 151749 134517729027904 Bad Request: /cart/add/
+INFO 2025-09-14 09:27:16,381 autoreload 155345 137388440016704 Watching for file changes with StatReloader
+INFO 2025-09-14 09:27:21,156 basehttp 155345 137388273694272 "GET /metrics HTTP/1.1" 200 14917
+INFO 2025-09-14 09:27:25,575 basehttp 155345 137388273694272 "GET /metrics HTTP/1.1" 200 18557
+WARNING 2025-09-14 09:36:36,636 log 158447 131664167560768 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:38,927 log 158447 131664167560768 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:41,192 log 158447 131664159168064 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:43,312 log 158447 131664159168064 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:45,931 log 158447 131664167560768 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:48,333 log 158447 131664167560768 Not Found: /favicon.ico
+WARNING 2025-09-14 09:36:51,088 log 158447 131664167560768 Not Found: /favicon.ico
+WARNING 2025-09-14 09:37:02,759 log 158447 131664283674432 Forbidden: /api/cart/
+WARNING 2025-09-14 09:37:05,252 log 158447 131664283674432 Not Found: /api/products/99999/
+WARNING 2025-09-14 09:37:05,495 log 158447 131664283674432 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:37:05,707 log 158447 131664283674432 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:37:05,918 log 158447 131664283674432 Bad Request: /api/orders/
+WARNING 2025-09-14 09:37:05,936 log 158447 131664283674432 Forbidden: /api/cart/
+WARNING 2025-09-14 09:37:05,938 log 158447 131664283674432 Forbidden: /api/cart/add/
+WARNING 2025-09-14 09:37:05,939 log 158447 131664283674432 Forbidden: /api/wishlist/
+WARNING 2025-09-14 09:37:05,940 log 158447 131664283674432 Forbidden: /api/orders/
+INFO 2025-09-14 09:37:06,702 auth_views 158447 131664283674432 New user registered: newuser
+INFO 2025-09-14 09:37:07,408 auth_views 158447 131664283674432 User logged in: newuser
+INFO 2025-09-14 09:37:07,481 views 158447 131664283674432 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:07,501 views 158447 131664283674432 Tag filter 'New Arrival' applied
+INFO 2025-09-14 09:37:07,517 views 158447 131664283674432 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:08,616 checkout_views 158447 131664283674432 Order created: ORD-282DDEF4 for user testuser
+INFO 2025-09-14 09:37:09,752 views 158447 131664283674432 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:09,763 views 158447 131664283674432 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:09,764 views 158447 131664283674432 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:09,773 views 158447 131664283674432 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 09:37:10,068 log 158447 131664283674432 Bad Request: /cart/add/
+INFO 2025-09-14 09:37:19,822 views 158447 131664283674432 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:19,856 views 158447 131664283674432 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:19,889 views 158447 131664283674432 Tag filter 'New Arrival' applied
+WARNING 2025-09-14 09:37:21,968 log 158447 131664283674432 Not Found: /product/non-existent/
+WARNING 2025-09-14 09:37:21,984 log 158447 131664283674432 Not Found: /category/non-existent/
+WARNING 2025-09-14 09:37:22,001 log 158447 131664283674432 Not Found: /tag/non-existent/
+INFO 2025-09-14 09:37:39,628 views 160434 123148703840064 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:39,653 views 160434 123148703840064 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:39,683 views 160434 123148703840064 Tag filter 'New Arrival' applied
+WARNING 2025-09-14 09:37:41,324 log 160434 123148703840064 Not Found: /product/non-existent/
+WARNING 2025-09-14 09:37:41,343 log 160434 123148703840064 Not Found: /category/non-existent/
+WARNING 2025-09-14 09:37:41,362 log 160434 123148703840064 Not Found: /tag/non-existent/
+WARNING 2025-09-14 09:37:41,931 log 160434 123148703840064 Forbidden: /api/cart/
+WARNING 2025-09-14 09:37:44,092 log 160434 123148703840064 Not Found: /api/products/99999/
+WARNING 2025-09-14 09:37:44,281 log 160434 123148703840064 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:37:44,557 log 160434 123148703840064 Bad Request: /api/cart/add/
+WARNING 2025-09-14 09:37:44,775 log 160434 123148703840064 Bad Request: /api/orders/
+WARNING 2025-09-14 09:37:44,795 log 160434 123148703840064 Forbidden: /api/cart/
+WARNING 2025-09-14 09:37:44,797 log 160434 123148703840064 Forbidden: /api/cart/add/
+WARNING 2025-09-14 09:37:44,798 log 160434 123148703840064 Forbidden: /api/wishlist/
+WARNING 2025-09-14 09:37:44,800 log 160434 123148703840064 Forbidden: /api/orders/
+INFO 2025-09-14 09:37:45,362 auth_views 160434 123148703840064 New user registered: newuser
+INFO 2025-09-14 09:37:45,950 auth_views 160434 123148703840064 User logged in: newuser
+INFO 2025-09-14 09:37:45,988 views 160434 123148703840064 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:45,997 views 160434 123148703840064 Tag filter 'New Arrival' applied
+INFO 2025-09-14 09:37:46,006 views 160434 123148703840064 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:46,905 checkout_views 160434 123148703840064 Order created: ORD-E9A6734D for user testuser
+INFO 2025-09-14 09:37:47,612 views 160434 123148703840064 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:47,623 views 160434 123148703840064 Search query 'Test' returned 1 products
+INFO 2025-09-14 09:37:47,624 views 160434 123148703840064 Category filter 'Electronics' applied
+INFO 2025-09-14 09:37:47,634 views 160434 123148703840064 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 09:37:47,843 log 160434 123148703840064 Bad Request: /cart/add/
+INFO 2025-09-14 10:01:01,579 views 167230 126404339386176 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:01:01,608 views 167230 126404339386176 Category filter 'Electronics' applied
+INFO 2025-09-14 10:01:01,639 views 167230 126404339386176 Tag filter 'New Arrival' applied
+WARNING 2025-09-14 10:01:03,760 log 167230 126404339386176 Not Found: /product/non-existent/
+WARNING 2025-09-14 10:01:03,779 log 167230 126404339386176 Not Found: /category/non-existent/
+WARNING 2025-09-14 10:01:03,796 log 167230 126404339386176 Not Found: /tag/non-existent/
+WARNING 2025-09-14 10:01:04,381 log 167230 126404339386176 Forbidden: /api/cart/
+WARNING 2025-09-14 10:01:07,742 log 167230 126404339386176 Not Found: /api/products/99999/
+WARNING 2025-09-14 10:01:07,960 log 167230 126404339386176 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:01:08,240 log 167230 126404339386176 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:01:08,443 log 167230 126404339386176 Bad Request: /api/orders/
+WARNING 2025-09-14 10:01:08,459 log 167230 126404339386176 Forbidden: /api/cart/
+WARNING 2025-09-14 10:01:08,460 log 167230 126404339386176 Forbidden: /api/cart/add/
+WARNING 2025-09-14 10:01:08,461 log 167230 126404339386176 Forbidden: /api/wishlist/
+WARNING 2025-09-14 10:01:08,462 log 167230 126404339386176 Forbidden: /api/orders/
+INFO 2025-09-14 10:01:08,973 auth_views 167230 126404339386176 New user registered: newuser
+INFO 2025-09-14 10:01:09,615 auth_views 167230 126404339386176 User logged in: newuser
+INFO 2025-09-14 10:01:09,649 views 167230 126404339386176 Category filter 'Electronics' applied
+INFO 2025-09-14 10:01:09,658 views 167230 126404339386176 Tag filter 'New Arrival' applied
+INFO 2025-09-14 10:01:09,668 views 167230 126404339386176 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:01:10,460 checkout_views 167230 126404339386176 Order created: ORD-F8E678E8 for user testuser
+INFO 2025-09-14 10:01:11,296 views 167230 126404339386176 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:01:11,309 views 167230 126404339386176 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:01:11,310 views 167230 126404339386176 Category filter 'Electronics' applied
+INFO 2025-09-14 10:01:11,323 views 167230 126404339386176 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 10:01:11,573 log 167230 126404339386176 Bad Request: /cart/add/
+WARNING 2025-09-14 10:32:04,530 log 174742 132063761000000 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:06,762 log 174742 132063761000000 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:09,604 log 174742 132063761000000 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:11,509 log 174742 132063761000000 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:13,804 log 174742 132063752607296 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:15,979 log 174742 132063752607296 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:17,988 log 174742 132063752607296 Not Found: /favicon.ico
+WARNING 2025-09-14 10:32:29,796 log 174742 132063878170432 Forbidden: /api/cart/
+WARNING 2025-09-14 10:32:32,097 log 174742 132063878170432 Not Found: /api/products/99999/
+WARNING 2025-09-14 10:32:32,304 log 174742 132063878170432 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:32:32,514 log 174742 132063878170432 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:32:32,720 log 174742 132063878170432 Bad Request: /api/orders/
+WARNING 2025-09-14 10:32:32,737 log 174742 132063878170432 Forbidden: /api/cart/
+WARNING 2025-09-14 10:32:32,739 log 174742 132063878170432 Forbidden: /api/cart/add/
+WARNING 2025-09-14 10:32:32,740 log 174742 132063878170432 Forbidden: /api/wishlist/
+WARNING 2025-09-14 10:32:32,741 log 174742 132063878170432 Forbidden: /api/orders/
+INFO 2025-09-14 10:32:33,362 auth_views 174742 132063878170432 New user registered: newuser
+INFO 2025-09-14 10:32:33,930 auth_views 174742 132063878170432 User logged in: newuser
+INFO 2025-09-14 10:32:33,973 views 174742 132063878170432 Category filter 'Electronics' applied
+INFO 2025-09-14 10:32:33,984 views 174742 132063878170432 Tag filter 'New Arrival' applied
+INFO 2025-09-14 10:32:33,997 views 174742 132063878170432 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:32:34,942 checkout_views 174742 132063878170432 Order created: ORD-BF99BEB4 for user testuser
+INFO 2025-09-14 10:32:35,722 views 174742 132063878170432 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:32:35,733 views 174742 132063878170432 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:32:35,734 views 174742 132063878170432 Category filter 'Electronics' applied
+INFO 2025-09-14 10:32:35,748 views 174742 132063878170432 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 10:32:35,973 log 174742 132063878170432 Bad Request: /cart/add/
+INFO 2025-09-14 10:32:44,491 views 174742 132063878170432 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:32:44,520 views 174742 132063878170432 Category filter 'Electronics' applied
+INFO 2025-09-14 10:32:44,547 views 174742 132063878170432 Tag filter 'New Arrival' applied
+WARNING 2025-09-14 10:32:46,457 log 174742 132063878170432 Not Found: /product/non-existent/
+WARNING 2025-09-14 10:32:46,474 log 174742 132063878170432 Not Found: /category/non-existent/
+WARNING 2025-09-14 10:32:46,492 log 174742 132063878170432 Not Found: /tag/non-existent/
+WARNING 2025-09-14 10:35:30,654 log 177234 135808270911296 Forbidden: /api/cart/
+WARNING 2025-09-14 10:35:33,081 log 177234 135808270911296 Not Found: /api/products/99999/
+WARNING 2025-09-14 10:35:33,309 log 177234 135808270911296 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:35:33,538 log 177234 135808270911296 Bad Request: /api/cart/add/
+WARNING 2025-09-14 10:35:33,777 log 177234 135808270911296 Bad Request: /api/orders/
+WARNING 2025-09-14 10:35:33,793 log 177234 135808270911296 Forbidden: /api/cart/
+WARNING 2025-09-14 10:35:33,794 log 177234 135808270911296 Forbidden: /api/cart/add/
+WARNING 2025-09-14 10:35:33,796 log 177234 135808270911296 Forbidden: /api/wishlist/
+WARNING 2025-09-14 10:35:33,797 log 177234 135808270911296 Forbidden: /api/orders/
+INFO 2025-09-14 10:35:34,519 auth_views 177234 135808270911296 New user registered: newuser
+INFO 2025-09-14 10:35:35,161 auth_views 177234 135808270911296 User logged in: newuser
+INFO 2025-09-14 10:35:35,219 views 177234 135808270911296 Category filter 'Electronics' applied
+INFO 2025-09-14 10:35:35,232 views 177234 135808270911296 Tag filter 'New Arrival' applied
+INFO 2025-09-14 10:35:35,248 views 177234 135808270911296 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:35:36,144 checkout_views 177234 135808270911296 Order created: ORD-F0FBA219 for user testuser
+INFO 2025-09-14 10:35:36,965 views 177234 135808270911296 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:35:36,979 views 177234 135808270911296 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:35:36,980 views 177234 135808270911296 Category filter 'Electronics' applied
+INFO 2025-09-14 10:35:36,995 views 177234 135808270911296 Search query 'nonexistent' returned 0 products
+WARNING 2025-09-14 10:35:37,316 log 177234 135808270911296 Bad Request: /cart/add/
+INFO 2025-09-14 10:35:45,490 views 177234 135808270911296 Search query 'Test' returned 1 products
+INFO 2025-09-14 10:35:45,518 views 177234 135808270911296 Category filter 'Electronics' applied
+INFO 2025-09-14 10:35:45,545 views 177234 135808270911296 Tag filter 'New Arrival' applied
+WARNING 2025-09-14 10:35:47,466 log 177234 135808270911296 Not Found: /product/non-existent/
+WARNING 2025-09-14 10:35:47,485 log 177234 135808270911296 Not Found: /category/non-existent/
+WARNING 2025-09-14 10:35:47,570 log 177234 135808270911296 Not Found: /tag/non-existent/
