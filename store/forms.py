@@ -396,9 +396,11 @@ class WishlistForm(forms.Form):
         ("share", _("Share Wishlist")),
     ]
 
-    action = forms.ChoiceField(choices=ACTION_CHOICES, widget=forms.HiddenInput())
+    action = forms.ChoiceField(
+        choices=ACTION_CHOICES, widget=forms.HiddenInput(), required=False
+    )
 
-    product_id = forms.IntegerField(widget=forms.HiddenInput())
+    product_id = forms.IntegerField(widget=forms.HiddenInput(), required=False)
 
     def clean_product_id(self):
         """
@@ -411,6 +413,8 @@ class WishlistForm(forms.Form):
             forms.ValidationError: If product doesn't exist or is inactive
         """
         product_id = self.cleaned_data.get("product_id")
+        if not product_id:
+            return product_id  # Return None/empty if no product_id provided
         try:
             product = Product.objects.get(id=product_id, is_active=True)
             return product_id
@@ -660,7 +664,13 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ["phone_number", "date_of_birth", "gender", "bio", "newsletter_subscription"]
+        fields = [
+            "phone_number",
+            "date_of_birth",
+            "gender",
+            "bio",
+            "newsletter_subscription",
+        ]
         widgets = {
             "phone_number": forms.TextInput(
                 attrs={
@@ -695,6 +705,18 @@ class UserProfileForm(forms.ModelForm):
                 }
             ),
         }
+
+    def clean_phone_number(self):
+        """Validate phone number format."""
+        phone_number = self.cleaned_data.get("phone_number")
+        if phone_number:
+            # Basic phone number validation - should contain only digits, spaces, hyphens, parentheses, and +
+            import re
+
+            phone_pattern = r"^[\+]?[1-9][\d\s\-\(\)]{7,15}$"
+            if not re.match(phone_pattern, phone_number):
+                raise forms.ValidationError("Please enter a valid phone number.")
+        return phone_number
 
 
 class AddressForm(forms.ModelForm):
@@ -809,7 +831,8 @@ class AddressForm(forms.ModelForm):
         if phone_number:
             # Basic phone number validation - should contain only digits, spaces, hyphens, parentheses, and +
             import re
-            phone_pattern = r'^[\+]?[1-9][\d\s\-\(\)]{7,15}$'
+
+            phone_pattern = r"^[\+]?[1-9][\d\s\-\(\)]{7,15}$"
             if not re.match(phone_pattern, phone_number):
                 raise forms.ValidationError("Please enter a valid phone number.")
         return phone_number
@@ -827,10 +850,12 @@ class PaymentMethodForm(forms.ModelForm):
         model = PaymentMethod
         fields = [
             "payment_type",
+            "cardholder_name",
             "card_brand",
             "card_last_four",
             "expiry_month",
             "expiry_year",
+            "billing_address",
             "is_default",
         ]
         widgets = {
