@@ -149,8 +149,8 @@ A comprehensive, production-ready e-commerce application built with Django, demo
 #### Option 1: Traditional Setup
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd devops-assign
+git clone https://github.com/dev-tayyabhussain/Django-Complete-ECommerce-Platform.git
+cd Django-Complete-ECommerce-Platform
 
 # Create virtual environment
 python -m venv venv
@@ -178,8 +178,8 @@ python manage.py runserver
 #### Option 2: Docker Setup
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd devops-assign
+git clone https://github.com/dev-tayyabhussain/Django-Complete-ECommerce-Platform.git
+cd Django-Complete-ECommerce-Platform
 
 # Start all services
 docker-compose up --build
@@ -338,9 +338,6 @@ docker-compose --profile production --profile monitoring up -d
 ```bash
 # Render deployment
 render deploy
-
-# Railway deployment
-railway up
 
 # Manual deployment
 git push origin main
