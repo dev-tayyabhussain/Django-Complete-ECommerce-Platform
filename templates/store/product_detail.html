@@ -62,14 +62,14 @@
             <div class="price-section mb-4">
                 {% if product.is_on_sale %}
                     <div class="d-flex align-items-center">
-                        <span class="sale-price h3 me-3">${{ product.sale_price }}</span>
-                        <span class="original-price h5">${{ product.price }}</span>
+                        <span class="sale-price h3 me-3">£{{ product.sale_price }}</span>
+                        <span class="original-price h5">£{{ product.price }}</span>
                         <span class="badge bg-danger ms-3">
                             {{ product.get_discount_percentage }}% OFF
                         </span>
                     </div>
                 {% else %}
-                    <span class="price h3">${{ product.price }}</span>
+                    <span class="price h3">£{{ product.price }}</span>
                 {% endif %}
             </div>
             
@@ -279,10 +279,10 @@
                         <div class="mt-auto">
                             <div class="price mb-2">
                                 {% if related_product.is_on_sale %}
-                                    <span class="sale-price">${{ related_product.sale_price }}</span>
-                                    <span class="original-price">${{ related_product.price }}</span>
+                                    <span class="sale-price">£{{ related_product.sale_price }}</span>
+                                    <span class="original-price">£{{ related_product.price }}</span>
                                 {% else %}
-                                    <span>${{ related_product.price }}</span>
+                                    <span>£{{ related_product.price }}</span>
                                 {% endif %}
                             </div>
                             

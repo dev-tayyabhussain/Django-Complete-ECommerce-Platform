@@ -90,10 +90,10 @@
                 <div class="mt-auto">
                     <div class="price mb-2">
                         {% if product.is_on_sale %}
-                            <span class="sale-price">${{ product.sale_price }}</span>
-                            <span class="original-price">${{ product.price }}</span>
+                            <span class="sale-price">£{{ product.sale_price }}</span>
+                            <span class="original-price">£{{ product.price }}</span>
                         {% else %}
-                            <span>${{ product.price }}</span>
+                            <span>£{{ product.price }}</span>
                         {% endif %}
                     </div>
                     

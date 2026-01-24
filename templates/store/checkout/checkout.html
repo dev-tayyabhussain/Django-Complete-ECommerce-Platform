@@ -808,7 +808,7 @@
                         
                         <div class="summary-row">
                             <span class="summary-label">Subtotal ({{ cart_total_items }} items)</span>
-                            <span class="summary-value">${{ subtotal|floatformat:2 }}</span>
+                            <span class="summary-value">£{{ subtotal|floatformat:2 }}</span>
                         </div>
                         
                         <div class="summary-row">
@@ -817,26 +817,26 @@
                                 {% if free_shipping %}
                                     <span class="text-success">FREE</span>
                                 {% else %}
-                                    ${{ shipping_cost|floatformat:2 }}
+                                    £{{ shipping_cost|floatformat:2 }}
                                 {% endif %}
                             </span>
                         </div>
                         
                         <div class="summary-row">
                             <span class="summary-label">Tax</span>
-                            <span class="summary-value">${{ tax_amount|floatformat:2 }}</span>
+                            <span class="summary-value">£{{ tax_amount|floatformat:2 }}</span>
                         </div>
                         
                         {% if applied_coupon %}
                         <div class="summary-row">
                             <span class="summary-label">Discount ({{ applied_coupon }})</span>
-                            <span class="summary-value text-success">-${{ discount_amount|floatformat:2 }}</span>
+                            <span class="summary-value text-success">-£{{ discount_amount|floatformat:2 }}</span>
                         </div>
                         {% endif %}
                         
                         <div class="summary-row total">
                             <span class="summary-label">Total</span>
-                            <span class="summary-value">${{ total|floatformat:2 }}</span>
+                            <span class="summary-value">£{{ total|floatformat:2 }}</span>
                         </div>
                         
                         <button type="submit" class="checkout-btn" id="checkout-btn">

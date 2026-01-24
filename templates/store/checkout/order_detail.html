@@ -492,8 +492,8 @@
                             <td>
                                 <span class="quantity-badge">{{ item.quantity }}</span>
                             </td>
-                            <td class="price-cell">${{ item.unit_price }}</td>
-                            <td class="price-cell">${{ item.total_price }}</td>
+                            <td class="price-cell">£{{ item.unit_price }}</td>
+                            <td class="price-cell">£{{ item.total_price }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -509,29 +509,29 @@
                 <div class="summary-section">
                     <div class="summary-row">
                         <span class="summary-label">Subtotal:</span>
-                        <span class="summary-value">${{ order.subtotal }}</span>
+                        <span class="summary-value">£{{ order.subtotal }}</span>
                     </div>
                     {% if order.tax_amount %}
                     <div class="summary-row">
                         <span class="summary-label">Tax:</span>
-                        <span class="summary-value">${{ order.tax_amount }}</span>
+                        <span class="summary-value">£{{ order.tax_amount }}</span>
                     </div>
                     {% endif %}
                     {% if order.shipping_amount %}
                     <div class="summary-row">
                         <span class="summary-label">Shipping:</span>
-                        <span class="summary-value">${{ order.shipping_amount }}</span>
+                        <span class="summary-value">£{{ order.shipping_amount }}</span>
                     </div>
                     {% endif %}
                     {% if order.discount_amount %}
                     <div class="summary-row">
                         <span class="summary-label">Discount:</span>
-                        <span class="summary-value">-${{ order.discount_amount }}</span>
+                        <span class="summary-value">-£{{ order.discount_amount }}</span>
                     </div>
                     {% endif %}
                     <div class="summary-row total-row">
                         <span class="summary-label">Total:</span>
-                        <span class="summary-value">${{ order.total_amount }}</span>
+                        <span class="summary-value">£{{ order.total_amount }}</span>
                     </div>
                 </div>
 

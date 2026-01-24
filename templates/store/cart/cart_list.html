@@ -409,10 +409,10 @@
                                             <h5>{{ item.product.name }}</h5>
                                             <p><strong>Category:</strong> {{ item.product.category.name }}</p>
                                             {% if item.product.is_on_sale %}
-                                                <p><span class="text-muted text-decoration-line-through">${{ item.product.price }}</span> 
-                                                   <span class="text-danger fw-bold">${{ item.product.sale_price }}</span></p>
+                                                <p><span class="text-muted text-decoration-line-through">£{{ item.product.price }}</span> 
+                                                   <span class="text-danger fw-bold">£{{ item.product.sale_price }}</span></p>
                                             {% else %}
-                                                <p class="product-price">${{ item.product.price }}</p>
+                                                <p class="product-price">£{{ item.product.price }}</p>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -468,7 +468,7 @@
                             </div>
                         {% else %}
                             <div class="shipping-progress">
-                                <p class="mb-2">Add ${{ shipping_remaining|floatformat:2 }} more for free shipping!</p>
+                                <p class="mb-2">Add £{{ shipping_remaining|floatformat:2 }} more for free shipping!</p>
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: {% widthratio cart_subtotal 50 100 %}%"></div>
                                 </div>
@@ -477,7 +477,7 @@
                         
                         <div class="summary-row">
                             <span class="summary-label">Subtotal ({{ cart_total_items }} items)</span>
-                            <span class="summary-value" id="cart-subtotal">${{ cart_subtotal|floatformat:2 }}</span>
+                            <span class="summary-value" id="cart-subtotal">£{{ cart_subtotal|floatformat:2 }}</span>
                         </div>
                         
                         <div class="summary-row">
@@ -486,19 +486,19 @@
                                 {% if free_shipping %}
                                     <span class="text-success">FREE</span>
                                 {% else %}
-                                    ${{ shipping_cost|floatformat:2 }}
+                                    £{{ shipping_cost|floatformat:2 }}
                                 {% endif %}
                             </span>
                         </div>
                         
                         <div class="summary-row">
                             <span class="summary-label">Tax</span>
-                            <span class="summary-value" id="tax-amount">${{ tax_amount|floatformat:2 }}</span>
+                            <span class="summary-value" id="tax-amount">£{{ tax_amount|floatformat:2 }}</span>
                         </div>
                         
                         <div class="summary-row total">
                             <span class="summary-label">Total</span>
-                            <span class="summary-value" id="order-total">${{ order_total|floatformat:2 }}</span>
+                            <span class="summary-value" id="order-total">£{{ order_total|floatformat:2 }}</span>
                         </div>
                         
                         <div class="coupon-section">
