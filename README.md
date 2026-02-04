@@ -4,6 +4,7 @@ A comprehensive, production-ready e-commerce application built with Django, demo
 
 ## 🌟 Features
 
+
 ### 🛒 E-Commerce Functionality
 - **Product Catalog**: Browse products with categories, tags, and advanced filtering
 - **Shopping Cart**: Add/remove items, quantity management, and cart persistence
