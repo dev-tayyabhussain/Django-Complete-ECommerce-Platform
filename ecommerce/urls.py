@@ -27,7 +27,7 @@ urlpatterns = [
     path("", RedirectView.as_view(pattern_name="store:product_list"), name="home"),
 ]
 
-# Serve static and media files during development
+# Serve static and media files during development (only in DEBUG mode)
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
